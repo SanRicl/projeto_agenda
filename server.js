@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'public')))
 
 const sessionOptions = session({
-    secret: 'anthingthatanyonecouldknow',
+    secret: process.env.SECRETSTRING,
     store: MongoStore.create({
         mongoUrl: process.env.CONNECTIONSTRING
     }),
